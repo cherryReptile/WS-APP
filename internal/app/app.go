@@ -2,7 +2,6 @@ package app
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/sirupsen/logrus"
 	"time"
 )
 
@@ -21,8 +20,9 @@ func NewApp() *App {
 	return a
 }
 
-func (a *App) Run(port string) {
+func (a *App) Run(port string, errCh chan error) {
 	if err := a.Server.Listen(":" + port); err != nil {
-		logrus.Fatal(err)
+		errCh <- err
+		return
 	}
 }
