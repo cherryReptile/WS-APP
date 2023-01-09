@@ -1,0 +1,5 @@
+BASE_PATH: ${PWD}/../
+BASE_NAME: logger
+ENVIRONMENT:
+  TZ: "Europe/Moscow"
+  DOMAIN: "ww.loc"

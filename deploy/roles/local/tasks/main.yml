@@ -1,0 +1,26 @@
+- name: Create docker compose file
+  template:
+    src: docker-compose.yml.j2
+    dest: '{{BASE_PATH}}docker-compose.yml'
+  tags: configuration
+
+- name: Create .env file
+  template:
+    src: .env.j2
+    dest: '{{BASE_PATH}}.env'
+  tags: configuration
+
+- name: Build app
+  shell: |
+    make build
+  args:
+    chdir: '{{ BASE_PATH }}'
+  tags: configuration
+
+- name: Start app
+  shell: |
+    make down
+    docker-compose up -d
+  args:
+    chdir: '{{ BASE_PATH }}'
+  tags: configuration
