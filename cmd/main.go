@@ -8,8 +8,6 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/sirupsen/logrus"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/credentials/insecure"
 )
 
 func main() {
@@ -24,7 +22,7 @@ func main() {
 	})
 
 	//init client connection to grpc server
-	conn, err := grpc.Dial("auth:9000", grpc.WithTransportCredentials(insecure.NewCredentials()))
+	conn, err := client.NewConn("auth:9000")
 
 	if err != nil {
 		logrus.Warning(err)
