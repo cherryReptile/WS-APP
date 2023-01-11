@@ -2,10 +2,14 @@ package main
 
 import (
 	"github.com/cherryReptile/WS-APP/internal/app"
+	"github.com/cherryReptile/WS-APP/internal/middlewares"
 	"github.com/cherryReptile/WS-APP/internal/sqlite"
+	"github.com/cherryReptile/WS-AUTH/grpc/client"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/sirupsen/logrus"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/insecure"
 )
 
 func main() {
@@ -17,6 +21,21 @@ func main() {
 			return err
 		}
 		return ctx.JSON(map[string]string{"message": "database created successfully"})
+	})
+
+	//init client connection to grpc server
+	conn, err := grpc.Dial("auth:9000", grpc.WithTransportCredentials(insecure.NewCredentials()))
+
+	if err != nil {
+		logrus.Warning(err)
+	}
+
+	grpcClients := new(client.ServiceClients)
+	grpcClients.Init(conn)
+
+	home := app.Server.Group("/home", middlewares.CheckAuth(grpcClients.CheckAuth))
+	home.Get("/", func(c *fiber.Ctx) error {
+		return c.JSON(map[string]string{"message": "ok"})
 	})
 
 	errCh := make(chan error)
