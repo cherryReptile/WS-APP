@@ -3,6 +3,7 @@ module github.com/cherryReptile/WS-APP
 go 1.19
 
 require (
+	github.com/cherryReptile/WS-AUTH v0.0.0-20230111170716-de0fd9b3b964
 	github.com/gofiber/fiber/v2 v2.41.0
 	github.com/jmoiron/sqlx v1.3.5
 	github.com/mattn/go-sqlite3 v1.14.16
@@ -11,7 +12,6 @@ require (
 
 require (
 	github.com/andybalholm/brotli v1.0.4 // indirect
-	github.com/cherryReptile/WS-AUTH v0.0.0-20230110102007-0af824c2b691 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/klauspost/compress v1.15.14 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
