@@ -4,6 +4,8 @@ github.com/cherryReptile/WS-AUTH v0.0.0-20230110102007-0af824c2b691 h1:9aq7MJcBO
 github.com/cherryReptile/WS-AUTH v0.0.0-20230110102007-0af824c2b691/go.mod h1:Rm51DvYryiETfxskj3mRI6DdNr6qiZqMugPoqO8w5Kw=
 github.com/cherryReptile/WS-AUTH v0.0.0-20230111170716-de0fd9b3b964 h1:+t1R0indDmhZZSxY4GtUHiM3p2HgK4OzxYkUoMSZg5s=
 github.com/cherryReptile/WS-AUTH v0.0.0-20230111170716-de0fd9b3b964/go.mod h1:Rm51DvYryiETfxskj3mRI6DdNr6qiZqMugPoqO8w5Kw=
+github.com/cherryReptile/WS-AUTH v0.0.0-20230112223208-9fde1453cb72 h1:4e9JzZl+5Pdd+U9mT8D42/kjw97qS5oC/qzf8k1dDUM=
+github.com/cherryReptile/WS-AUTH v0.0.0-20230112223208-9fde1453cb72/go.mod h1:Rm51DvYryiETfxskj3mRI6DdNr6qiZqMugPoqO8w5Kw=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=

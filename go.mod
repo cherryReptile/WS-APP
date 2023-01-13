@@ -3,7 +3,7 @@ module github.com/cherryReptile/WS-APP
 go 1.19
 
 require (
-	github.com/cherryReptile/WS-AUTH v0.0.0-20230111170716-de0fd9b3b964
+	github.com/cherryReptile/WS-AUTH v0.0.0-20230112223208-9fde1453cb72
 	github.com/gofiber/fiber/v2 v2.41.0
 	github.com/jmoiron/sqlx v1.3.5
 	github.com/mattn/go-sqlite3 v1.14.16
