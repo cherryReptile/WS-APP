@@ -1,16 +1,16 @@
-package app
+package server
 
 import (
 	"github.com/gofiber/fiber/v2"
 	"time"
 )
 
-type App struct {
+type HttpServer struct {
 	Server *fiber.App
 }
 
-func NewApp() *App {
-	a := new(App)
+func NewHttpServer() *HttpServer {
+	a := new(HttpServer)
 	config := fiber.Config{
 		AppName:      "Logger",
 		WriteTimeout: 15 * time.Second,
@@ -20,7 +20,7 @@ func NewApp() *App {
 	return a
 }
 
-func (a *App) Run(port string, errCh chan error) {
+func (a *HttpServer) Run(port string, errCh chan error) {
 	if err := a.Server.Listen(":" + port); err != nil {
 		errCh <- err
 		return
